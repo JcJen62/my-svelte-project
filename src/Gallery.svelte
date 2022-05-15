@@ -1,5 +1,6 @@
 <script>
 	import { fade, fly } from 'svelte/transition';
+    import Gallery from 'svelte-image-gallery'
 	let visible = false;
 
     const handleClick = () => {
@@ -14,7 +15,13 @@
 </label>
 
 {#if visible}
-    <img in:fly="{{ y: 200, duration: 2000 }}" out:fade src="./_M7A5145.jpg" alt="Test"/>
+    <Gallery gap="10" maxColumnWidth='200'>
+        <img in:fly="{{ y: 200, duration: 2000 }}" out:fade src="./_M7A5145.jpg" alt="Test"/>
+
+    </Gallery>
+    <div class="container">
+        
+    </div>
 {/if}
 
 <style>
